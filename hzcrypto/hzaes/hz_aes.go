@@ -6,7 +6,6 @@ import (
 	"crypto/cipher"
 	"crypto/md5"
 	"encoding/base64"
-	"encoding/hex"
 	"fmt"
 )
 
@@ -21,7 +20,7 @@ func Encrypt(str, pwd string) (encode string, err error) {
 		return
 	}
 	encode = base64.StdEncoding.EncodeToString(result)
-	fmt.Printf("strsdata = %v  \n", hex.EncodeToString(result))
+	//fmt.Printf("strsdata = %v  \n", hex.EncodeToString(result))
 	return
 }
 
