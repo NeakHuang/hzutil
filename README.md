@@ -5,5 +5,5 @@
 
 ## Cammand
 ```shell
-go get -u github.com/neakhuang/hzutil.git
+go get -u github.com/neakhuang/hzutil
 ```
