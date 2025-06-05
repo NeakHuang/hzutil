@@ -5,7 +5,7 @@
 package hzstr
 
 import (
-	"github.com/NeakHuang/hzutil/hznumber"
+	"github.com/NeakHuang/hzutil/hzslice"
 	"strconv"
 	"strings"
 )
@@ -137,34 +137,7 @@ func ToFloat64(v string) float64 {
 	}
 }
 
-// 数字数组转string
-func NumSliceToString[T hznumber.Numeric](valList []T, split string) (str string) {
-	if nil == valList || len(valList) == 0 {
-		return str
-	}
-	if len(split) <= 0 {
-		split = ","
-	}
-	for _, s := range valList {
-		str += strconv.Itoa(int(s)) + split
-	}
-	cutLen := len(split)
-	return str[0 : len(str)-cutLen]
-}
-
-// 字符数组转string
-// 之后替换为 strings.Join
+// StrSliceToString 字符数组转string
 func StrSliceToString(valList []string, split string) (str string) {
-	// if nil == valList || len(valList) == 0 {
-	// 	return str
-	// }
-	// if len(split) <= 0 {
-	// 	split = ","
-	// }
-	// for _, s := range valList {
-	// 	str += s + split
-	// }
-	// cutLen := len(split)
-	// return str[0 : len(str)-cutLen]
-	return strings.Join(valList, split)
+	return hzslice.SliceToString(valList, split)
 }
